@@ -19,3 +19,8 @@ export const Fonts = {
   helveticaNeueRegular: 'HelveticaNeue',
   helveticaNeueCondensedBold: 'HelveticaNeue-CondensedBold',
 };
+
+// Global Images
+export const DefaultImage = {
+  userDefault: require('../assets/images/user.png'),
+};

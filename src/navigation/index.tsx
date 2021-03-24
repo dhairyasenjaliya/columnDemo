@@ -1,8 +1,8 @@
 // Import Screens
 import * as React from 'react';
 
-import contactScreen from '../container/contactScreen';
-import mainScreen from '../container/mainScreen/';
+import ContactScreen from '../container/contactScreen';
+import MainScreen from '../container/mainScreen/';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -18,8 +18,8 @@ class Navigator extends React.Component {
     return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
-          <Stack.Screen name="mainScreen" component={mainScreen} />
-          <Stack.Screen name="contactScreen" component={contactScreen} />
+          <Stack.Screen name="mainScreen" component={MainScreen} />
+          <Stack.Screen name="contactScreen" component={ContactScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );
