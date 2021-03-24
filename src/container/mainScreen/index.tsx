@@ -1,10 +1,13 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
+import ScreenHeader from '../../components/headerComponent';
+import {GradientColors} from '../../constants/globalStyles';
+import LinearGradient from 'react-native-linear-gradient';
 
 interface IProps {
-  appTheme: Object;
-  navigation: Object;
+  // appTheme: Object;
+  // navigation: Object;
 }
 
 interface IState {
@@ -22,8 +25,17 @@ class mainScreen extends React.Component<IProps, IState> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>MainScreen</Text>
-        <Button onPress={() => {}} title={'View All My Contacts'} />
+        <ScreenHeader title={'Column'} />
+        <View style={styles.buttonPos}>
+          <LinearGradient
+            colors={GradientColors.buttonGradient}
+            style={styles.accessContactButton}>
+            <TouchableOpacity>
+              <Text
+                style={styles.accessButtonText}>{`View All My Contacts`}</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+        </View>
       </View>
     );
   }
