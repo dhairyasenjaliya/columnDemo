@@ -4,8 +4,8 @@ import {
   Text,
   Image,
   TouchableOpacity,
-
-  // PermissionsAndroid,
+  FlatList,
+  Alert,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {GradientColors, DefaultImage} from '../../constants/globalStyles';
@@ -13,26 +13,54 @@ import {GradientColors, DefaultImage} from '../../constants/globalStyles';
 import styles from './style';
 
 const DisplayContactInfo = (props: any) => {
-  const {data} = props;
+  const {data, navigation} = props;
+
   const {
     givenName,
     familyName,
     phoneNumbers,
     hasThumbnail,
-    email,
     thumbnailPath,
   } = data;
-  let checkImage = thumbnailPath
+
+  // Check If Contact Has Image!
+  let checkImage = hasThumbnail
     ? {uri: thumbnailPath}
     : DefaultImage.userDefault;
+
+  const displayAvailableNumber = (contactSubData: any) => {
+    const {label, number} = contactSubData.item;
+    return (
+      <View>
+        <Text style={styles.numberText}>{label + ' : ' + number}</Text>
+      </View>
+    );
+  };
+
   return (
-    <View>
-      <Image
-        style={{height: 80, width: 80, borderRadius: 100}}
-        source={checkImage}
-      />
-      <Text>{givenName + familyName}</Text>
-    </View>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate('contactInfoScreen', {contactData: {data}})
+      }
+      style={styles.mainContact}>
+      <View style={styles.mainGroup}>
+        <Image style={styles.profileContain} source={checkImage} />
+        <View style={styles.infoContain}>
+          <View style={styles.mainGroup}>
+            <Text style={styles.nameGroup}>{givenName + ' '}</Text>
+            <Text style={styles.nameGroup}>{familyName}</Text>
+          </View>
+          {/* Find Avaiable Number type */}
+          <FlatList
+            data={phoneNumbers}
+            renderItem={(contactData: Object) => {
+              return displayAvailableNumber(contactData);
+            }}
+          />
+          {/* Find Avaiable Number Type End */}
+        </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 

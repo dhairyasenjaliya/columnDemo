@@ -22,7 +22,7 @@ const MainScreen: React.FC<IProps> = ({navigation}) => {
     PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.READ_CONTACTS, {
       title: 'Contacts',
       message: 'This app would like to view your contacts.',
-      buttonPositive: 'Please accept bare mortal',
+      buttonPositive: 'Please accept',
     }).then(data => {
       if (data === 'granted') {
         navigation.navigate('contactScreen');

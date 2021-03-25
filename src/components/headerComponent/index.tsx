@@ -15,7 +15,7 @@ const ScreenHeader = (props: any) => {
   const {title} = props;
   return (
     <LinearGradient
-      colors={GradientColors.headerGradient}
+      colors={GradientColors.whiteGradient}
       style={styles.backContain}>
       <Text style={styles.headerText}>{title}</Text>
     </LinearGradient>

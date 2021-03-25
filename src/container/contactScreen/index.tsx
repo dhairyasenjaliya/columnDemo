@@ -9,7 +9,7 @@ interface IProps {
   navigation: Object;
 }
 
-const ContactScreen: React.FC<IProps> = ({}) => {
+const ContactScreen: React.FC<IProps> = ({navigation}) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [contact, setContact] = useState<Object>([]);
 
@@ -21,6 +21,7 @@ const ContactScreen: React.FC<IProps> = ({}) => {
           setContact(data);
         }
       }
+      return {};
     });
   }, [contact]);
 
@@ -28,9 +29,11 @@ const ContactScreen: React.FC<IProps> = ({}) => {
     <View style={styles.container}>
       <ScreenHeader title={'My Contacts'} />
       <FlatList
-        data={contact}
+        data={Object.values(contact)}
         renderItem={data => {
-          return <DisplayContactInfo data={data.item} />;
+          return (
+            <DisplayContactInfo data={data.item} navigation={navigation} />
+          );
         }}
         keyExtractor={(item, index) => index.toString()}
       />
