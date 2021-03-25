@@ -84,7 +84,7 @@ const ContactInfoScreen: React.FC<IProps> = ({navigation, route}) => {
           style={styles.backArrowContain}
         />
       </TouchableOpacity>
-
+      {/* Display Contact Info */}
       <FlatList
         data={Object.values(contactData)}
         renderItem={data => {
@@ -93,6 +93,7 @@ const ContactInfoScreen: React.FC<IProps> = ({navigation, route}) => {
         keyExtractor={(item, index) => index.toString()}
         contentContainerStyle={styles.flatListContain}
       />
+      {/* Display Contact Info End */}
     </View>
   );
 };

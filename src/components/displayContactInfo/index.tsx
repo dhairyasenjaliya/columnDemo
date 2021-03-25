@@ -1,14 +1,6 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  FlatList,
-  Alert,
-} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import {GradientColors, DefaultImage} from '../../constants/globalStyles';
+import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
+import {DefaultImage} from '../../constants/globalStyles';
 
 import styles from './style';
 

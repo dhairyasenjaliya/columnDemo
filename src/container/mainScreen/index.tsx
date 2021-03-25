@@ -18,6 +18,7 @@ interface IProps {
 // Global Level Props To Identify Data Coming From Previos Screen
 
 const MainScreen: React.FC<IProps> = ({navigation}) => {
+  // Check Contact Permission
   const checkContactAccessOrNot = async () => {
     PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.READ_CONTACTS, {
       title: 'Contacts',

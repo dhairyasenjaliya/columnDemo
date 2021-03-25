@@ -21,12 +21,14 @@ class Navigator extends React.Component {
     return (
       <NavigationContainer>
         <Stack.Navigator headerMode="none">
+          {/* Define All Screen As Component */}
           <Stack.Screen name="mainScreen" component={MainScreen} />
           <Stack.Screen name="contactScreen" component={ContactScreen} />
           <Stack.Screen
             name="contactInfoScreen"
             component={ContactInfoScreen}
           />
+          {/* Define All Screen As Component End */}
         </Stack.Navigator>
       </NavigationContainer>
     );

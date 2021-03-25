@@ -1,5 +1,5 @@
-import {StyleSheet, Platform} from 'react-native';
-import {scale, verticalScale} from 'react-native-size-matters';
+import {StyleSheet} from 'react-native';
+import {scale} from 'react-native-size-matters';
 import {Colors, Fonts} from '../../constants/globalStyles';
 
 export default StyleSheet.create({
