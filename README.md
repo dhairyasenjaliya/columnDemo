@@ -29,4 +29,10 @@ TypeScript : https://reactnative.dev/docs/typescript
 Npm : https://reactnavigation.org/docs/getting-started
 
 4. react-native-size-matters
-Npm : https://github.com/nirsky/react-native-size-matters
+Npm : https://github.com/nirsky/react-native-size-matters 
+
+5. react-native-linear-gradient
+Npm : https://www.npmjs.com/package/react-native-linear-gradient
+
+6. react-native-phone-call
+Npm https://www.npmjs.com/package/react-native-phone-call
