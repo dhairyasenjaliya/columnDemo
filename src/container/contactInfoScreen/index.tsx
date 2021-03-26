@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
   Alert,
+  SafeAreaView,
 } from 'react-native';
 import styles from './styles';
 import {DefaultImage} from '../../constants/globalStyles';
@@ -29,7 +30,7 @@ const ContactInfoScreen: React.FC<IProps> = ({navigation, route}) => {
     };
     return (
       <View style={styles.flexRow}>
-        <Text>{label}</Text>
+        <Text style={styles.labelContain}>{label}</Text>
         <TextInput
           style={styles.textInput}
           value={number}
@@ -53,8 +54,9 @@ const ContactInfoScreen: React.FC<IProps> = ({navigation, route}) => {
       hasThumbnail,
       phoneNumbers,
       thumbnailPath,
+      givenName,
+      familyName,
     } = contactDetail.item;
-
     // Check If Contact Has Image!
     let checkImage = hasThumbnail
       ? {uri: thumbnailPath}
@@ -63,7 +65,9 @@ const ContactInfoScreen: React.FC<IProps> = ({navigation, route}) => {
     return (
       <View style={styles.contactContain}>
         <Image style={styles.profileContain} source={checkImage} />
-        <Text style={styles.contactNametext}>{displayName}</Text>
+        <Text style={styles.contactNametext}>
+          {givenName + ' ' + familyName}
+        </Text>
         {/* Display All Available Contact Number */}
         <FlatList
           data={Object.values(phoneNumbers)}
@@ -77,7 +81,7 @@ const ContactInfoScreen: React.FC<IProps> = ({navigation, route}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Image
           source={DefaultImage.backArrow}
@@ -94,7 +98,7 @@ const ContactInfoScreen: React.FC<IProps> = ({navigation, route}) => {
         contentContainerStyle={styles.flatListContain}
       />
       {/* Display Contact Info End */}
-    </View>
+    </SafeAreaView>
   );
 };
 export default ContactInfoScreen;

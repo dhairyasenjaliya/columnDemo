@@ -30,6 +30,7 @@ export default StyleSheet.create({
   contactNametext: {
     fontFamily: Fonts.helveticaNeueMedium,
     fontSize: scale(20),
+    paddingVertical: scale(10),
   },
   profileContain: {
     height: scale(60),
@@ -43,6 +44,7 @@ export default StyleSheet.create({
   },
   textInput: {
     height: scale(40),
+    width: scale(150),
     margin: scale(20),
     borderWidth: 1,
     color: Colors.carbonBlack,
@@ -50,5 +52,8 @@ export default StyleSheet.create({
   },
   flatListContain: {
     marginTop: scale(20),
+  },
+  labelContain: {
+    width: '20%',
   },
 });

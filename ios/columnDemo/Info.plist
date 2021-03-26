@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>columnDemo</string>
+	<string>Column</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -35,8 +35,18 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSContactsUsageDescription</key>
+	<string>Please Allow Column To Access Contact</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>HelveticaNeue-Light.ttf</string>
+		<string>HelveticaNeue-Medium.ttf</string>
+		<string>HelveticaNeue-Regular.ttf</string>
+		<string>HelveticaNeue-Thin.ttf</string>
+		<string>HelveticaNeueRegular.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -51,13 +61,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>HelveticaNeue-Light.ttf</string>
-		<string>HelveticaNeue-Medium.ttf</string>
-		<string>HelveticaNeue-Regular.ttf</string>
-		<string>HelveticaNeue-Thin.ttf</string>
-		<string>HelveticaNeueRegular.ttf</string>
-	</array>
 </dict>
 </plist>

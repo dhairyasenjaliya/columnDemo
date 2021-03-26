@@ -16,7 +16,7 @@ export default StyleSheet.create({
   accessButtonText: {
     fontSize: scale(14),
     color: Colors.perlWhite,
-    fontFamily: Fonts.helveticaNeueRegular,
+    fontFamily: Fonts.helveticaNeueMedium,
     paddingHorizontal: scale(10),
   },
   buttonPos: {

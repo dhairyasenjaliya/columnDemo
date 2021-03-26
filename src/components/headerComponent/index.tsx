@@ -1,18 +1,15 @@
 import React from 'react';
-import {Text} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import {GradientColors} from '../../constants/globalStyles';
-
+import {Text, View, SafeAreaView} from 'react-native';
 import styles from './style';
 
 const ScreenHeader = (props: any) => {
   const {title} = props;
   return (
-    <LinearGradient
-      colors={GradientColors.whiteGradient}
-      style={styles.backContain}>
-      <Text style={styles.headerText}>{title}</Text>
-    </LinearGradient>
+    <View style={styles.backContain}>
+      <SafeAreaView>
+        <Text style={styles.headerText}>{title}</Text>
+      </SafeAreaView>
+    </View>
   );
 };
 
